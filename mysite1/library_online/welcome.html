@@ -1,0 +1,36 @@
+biubiubiu
+<title>Online Library</title>
+<style type="text/css">
+body {
+     background-image: url(/media/images/1.jpg);
+     background-repeat: no-repeat}
+</style>
+<body> 
+<div align="center"><h1 style="font-style: normal; font-weight: 900; color:white;">Online Library</h1></div> 
+<div align="center"><form action="/search/" method="get">
+<input name="name" type="text" placeholder="Input the author's name" ><input type="submit" value="Search" onclick="location.href='/search/?name={{author.name}}'" >
+</div>
+</form>
+<table width=650 border=2 align="center">
+<tr style="text-align: center"><form action="/delete_author/" method="get">    
+  <tr bgcolor=#e3e3e3 style="filter:alpha(opacity=10)" height = 35 width= 600>
+        <th style="text-align: center">AuthorID</th>
+        <th style="text-align: center">Name</th>
+        <th style="text-align: center">Age</th>
+        <th style="text-align: center">Sex</th>
+        <th style="text-align: center">Country</th>
+        <th style="text-align: center">Delete</th>
+    </tr>
+{% for author in author_list %}
+    <tr bgcolor=#fcfcfc>
+        <td style="text-align: center;">{{ author.AuthorID }}</td>        
+        <td style="text-align: center;">{{ author.Name }}</td>
+        <td style="text-align: center;">{{ author.Age }}</td>
+        <td style="text-align: center;">{% if author.Sex %} Male {% else %} Female {% endif %}</td>
+        <td style="text-align: center;">{{ author.Country }}</td>   
+        <td style="text-align: center"><input type="button" value="Delete" onclick="location.href='/delete_author/?id={{author.id}}'">      
+    </tr>
+{% endfor %}
+<form>
+</table>
+</body>

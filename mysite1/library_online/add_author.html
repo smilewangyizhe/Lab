@@ -1,0 +1,37 @@
+balabala
+<html>
+<head><title>Online Library</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+body {
+	background-image: url(/media/images/2.jpg);}
+</style>
+</head>
+<body>
+<div align="center"><h1 style="font-style: normal; font-weight: 900; color:white;">New Author</h1></div>
+<div align="center" style="color:white;">{{information}}</div>
+<form method = "post">
+<table border=1 align="center">
+
+    <tr bgcolor=#e3e3e3 height = 30><th>AuthorID</th></tr>
+    <tr><td><input name="AuthorID" type="text" pattern="[0-9]*" placeholder="Numbers Only"></td></tr>
+ 
+    <tr bgcolor=#e3e3e3 height = 30><th>Name</th></tr>
+    <tr><td><input name="Name" type="text"></td></tr> 
+  
+    <tr bgcolor=#e3e3e3 height = 30><th>Age</th></tr>
+    <tr><td><input name="Age" type="text" pattern="\d{4}-\d{2}-\d{2}" placeholder="0000-00-00"></td></tr>
+
+    <tr bgcolor=#e3e3e3 height = 30><th>Sex</th></tr>
+    <tr><td style = "color:white"><input name="Sex" type="radio" value="M"> Male <input name="Sex" type="radio" value="F"> Female </td></tr>
+    
+    <tr bgcolor=#e3e3e3 height = 30><th>Country</th></tr>
+    <tr><td><input name="Country" type="text"></td></tr>
+
+    <tr bgcolor=#e3e3e3 height = 30><th>Operation</th></tr>
+    <tr><td align="center"><input type="submit" value="Submit"><input type="reset" value="Reset"><input type="button" value="Back" onclick="location.href='/welcome/'"></td></tr>
+
+</table>
+</form>
+</body>
+</html>

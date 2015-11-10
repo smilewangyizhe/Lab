@@ -1,0 +1,31 @@
+<html>
+<title>Online Library</title>
+<style type="text/css">
+body {
+     background-image: url(/media/images/2.jpg);
+     background-repeat: no-repeat}
+</style>
+<body>
+<tr style="text-align: center"><form action="/add_book/" method="get">
+<div align="center" style="font-style: normal; font-weight: 900; color:white;"><h1>{{ author }}'s books</h1></div>
+<div align="center"><input type="button" value="Add a new book" onclick="location.href='/add_book/'"></div>
+</form>
+<p></p>
+<form  action="/delete_book/" method="get">
+<table width="450" border=1 align="center">
+    <tr bgcolor=#e3e3e3 height = 30>
+        <th style="text-align: center">Book</th>
+        <th style="text-align: center">Operation</th>
+    </tr>
+{% for book in book_list %}
+    <tr bgcolor=#fcfcfc height = 40>
+        <td style="text-align: center"><a href="/detail/?id={{book.id}}">{{ book.Title }}</a></td>
+        <td style="text-align: center"><input type="button" value="Delete" onclick="location.href='/delete_book/?id={{book.id}}'">
+    </tr>
+{% endfor %}
+</table>
+</form>
+<p></p>
+<div align="center"><input type="button" value="Back" onclick="location.href='/welcome/'"></div>
+</body>
+</html>
